@@ -45,7 +45,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>be.webtechie.GeoWarsApp</mainClass>
+                            <mainClass>be.webtechie.PerformanceApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
