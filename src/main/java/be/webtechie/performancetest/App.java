@@ -1,4 +1,4 @@
-package be.webtechie;
+package be.webtechie.performancetest;
 
 import static com.almasb.fxgl.dsl.FXGL.getGameWorld;
 import static com.almasb.fxgl.dsl.FXGL.spawn;
@@ -11,7 +11,7 @@ import com.almasb.fxgl.entity.EntityFactory;
 /**
  * Main class of the application
  */
-public class PerformanceApp extends GameApplication {
+public class App extends GameApplication {
 
     private static int numberOfItems = 50;
 
@@ -25,7 +25,7 @@ public class PerformanceApp extends GameApplication {
     /**
      * Reference to the factory which will defines how all the types must be created.
      */
-    private final PerformanceFactory factory = new PerformanceFactory();
+    private final Factory factory = new Factory();
 
     /**
      * Player object we are going to use to provide to the factory so it can start a bullet from the player center.
@@ -55,7 +55,7 @@ public class PerformanceApp extends GameApplication {
      */
     @Override
     protected void initSettings(GameSettings settings) {
-        settings.setTitle("JavaFX performance test - " + numberOfItems + " items");
+        settings.setTitle("JavaFX performance test - " + numberOfItems + " items - ");
         settings.setProfilingEnabled(true);
     }
 

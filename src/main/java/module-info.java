@@ -1,6 +1,6 @@
-module fxgl.performance.test {
+module be.webtechie.performancetest {
     requires com.almasb.fxgl.core;
     requires com.almasb.fxgl.all;
 
-    exports be.webtechie;
+    opens be.webtechie.performancetest to com.almasb.fxgl.core;
 }

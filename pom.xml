@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>be.webtechie</groupId>
-    <artifactId>fxgl-performance-test</artifactId>
+    <artifactId>performance-test</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>fxgl-performance-test</name>
+    <name>JavaFX FXGL performance test</name>
     <url>https://www.webtechie.be</url>
 
     <properties>
@@ -45,7 +45,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>be.webtechie.PerformanceApp</mainClass>
+                            <mainClass>be.webtechie.performancetest.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -89,6 +89,28 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <executable>java</executable>
+                    <arguments>
+                        <argument>--module-path</argument>
+                        <argument>${project.build.directory}/distribution</argument>
+                        <argument>--module</argument>
+                        <argument>be.webtechie/be.webtechie.performancetest.App</argument>
+                    </arguments>
+                </configuration>
             </plugin>
         </plugins>
     </build>

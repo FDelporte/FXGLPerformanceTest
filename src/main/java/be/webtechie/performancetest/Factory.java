@@ -1,10 +1,10 @@
-package be.webtechie;
+package be.webtechie.performancetest;
 
 import static com.almasb.fxgl.dsl.FXGL.entityBuilder;
 import static com.almasb.fxgl.dsl.FXGL.getAppHeight;
 import static com.almasb.fxgl.dsl.FXGL.getAppWidth;
 
-import be.webtechie.PerformanceApp.EntityType;
+import be.webtechie.performancetest.App.EntityType;
 import com.almasb.fxgl.dsl.components.RandomMoveComponent;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.EntityFactory;
@@ -17,7 +17,7 @@ import javafx.scene.shape.Circle;
 /**
  * The factory which defines how each entity looks like
  */
-public class PerformanceFactory implements EntityFactory {
+public class Factory implements EntityFactory {
 
     @Spawns("item")
     public Entity newItem(SpawnData data) {
