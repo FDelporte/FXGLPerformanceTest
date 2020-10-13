@@ -1,4 +1,5 @@
-/.idea/
-/target/
-/system/
-*.log
+fxgl-performance-test.iml
+.idea/
+logs/
+target/
+system/
