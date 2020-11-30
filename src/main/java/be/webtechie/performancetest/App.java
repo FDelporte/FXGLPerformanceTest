@@ -7,11 +7,16 @@ import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.EntityFactory;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Main class of the application
  */
 public class App extends GameApplication {
+
+    private int frames = 0;
+    private long lastNow = -1L;
 
     private static int numberOfItems = 50;
 
@@ -68,6 +73,24 @@ public class App extends GameApplication {
 
         for (int i = 0; i < numberOfItems; i++) {
             spawn("item");
+        }
+    }
+
+    @Override
+    protected void onUpdate(double tpf) {
+        if (this.lastNow == -1L) {
+            this.lastNow = System.nanoTime();
+            return;
+        }
+
+        this.frames++;
+
+        var now = System.nanoTime();
+        if (now - this.lastNow >= 3_000_000_000L) {
+            System.out.println(new SimpleDateFormat("HH:mm:ss.sss").format(new Date())
+                    + " FPS: " + this.frames / 3.0);
+            this.lastNow = now;
+            this.frames = 0;
         }
     }
 

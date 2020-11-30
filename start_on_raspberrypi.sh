@@ -6,4 +6,4 @@ sudo java -Dmonocle.egl.lib=/opt/arm32fb-sdk/lib/libgluon_drm.so \
   -Djavafx.verbose=true \
   -p /opt/arm32fb-sdk/lib \
   --add-modules javafx.controls \
-  -jar target/performance-test-1.0-SNAPSHOT-jar-with-dependencies.jar
+  -jar target/performance-test-1.0-SNAPSHOT-jar-with-dependencies.jar 25
